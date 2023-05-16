@@ -2,6 +2,8 @@ package com.mycompany.ud4_te1;
 
 public class CCuenta {
 
+    public static final int COMISION = 2;
+
     private String nombre;
     private String cuenta;
     private double saldo;
@@ -46,9 +48,9 @@ public class CCuenta {
     public void retirar(double cantidad) throws Exception {
         if (cantidad <= 0)
             throw new Exception ("No se puede retirar una cantidad negativa");
-        if (this.getSaldo() < cantidad + 2)
+        if (this.getSaldo() < cantidad + COMISION)
             throw new Exception ("No se hay suficiente saldo");
-        this.saldo -= (cantidad + 2);
+        this.saldo -= (cantidad + COMISION);
     }
 
 }
