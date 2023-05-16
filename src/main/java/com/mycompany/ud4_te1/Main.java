@@ -9,13 +9,13 @@ public class Main {
     }
     
     public static void operativaCuenta(CCuenta cuentaTrabajo) {
-        double saldoActual = cuentaTrabajo.estado();
+        double saldoActual = cuentaTrabajo.getSaldo();
         System.out.println("El saldo actual es " + saldoActual);
 
         try {
             System.out.println("Cargo en cuenta");
             cuentaTrabajo.retirar(2300);
-            System.out.println("El nuevo saldo es: " + cuentaTrabajo.estado());
+            System.out.println("El nuevo saldo es: " + cuentaTrabajo.getSaldo());
         } catch (Exception e) {
             System.out.print("Fallo al retirar");
         }
@@ -23,7 +23,7 @@ public class Main {
         try {
             System.out.println("Abono en cuenta");
             cuentaTrabajo.ingresar(695);
-            System.out.println("El nuevo saldo es: " + cuentaTrabajo.estado());
+            System.out.println("El nuevo saldo es: " + cuentaTrabajo.getSaldo());
         } catch (Exception e) {
             System.out.print("Fallo al ingresar");
         }
